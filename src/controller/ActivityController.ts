@@ -2,7 +2,7 @@ import { ActivityService } from '../service/ActivityService'
 import { ResultUtil } from '../utils/result.util'
 import { Request } from 'express'
 import { Result } from '../utils/result'
-import {Controller, Get, Post} from "../common";
+import { Controller, Get, Post } from '../common'
 
 @Controller('/test')
 export class ActivityController {

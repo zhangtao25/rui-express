@@ -1,16 +1,17 @@
-import { getRepository } from 'typeorm'
+import { createConnection, getRepository } from 'typeorm'
 import { Activity } from '../entity/Activity'
-// import { FileService } from './FileService'
-// import { User } from '../entity/User'
-// import { ActivityRelation } from '../entity/ActivityRelation'
-// import { UserService } from './UserService'
 
 export class ActivityService {
-    private activityRepository = getRepository(Activity)
-    // private userRepository = getRepository(User)
-    // private userService = new UserService()
-    // private activityRelationRepository = getRepository(ActivityRelation)
-    // private fileService = new FileService()
+    private activityRepository = getRepository(Activity, 'db1Connection')
+
+    // const repository = connection.getRepository(User);
+    // private activityRepository: any
+    // constructor() {
+    //     // const connection = await createConnection('db2Connection')
+    //     createConnection('db1Connection').then((connection) => {
+    //         this.activityRepository = connection.getRepository(Activity)
+    //     })
+    // }
 
     async findActivityByConditions(params: any): Promise<any> {
         return this.activityRepository.find()
